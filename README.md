@@ -35,22 +35,39 @@ $wgGoogleRichCardsAnnotateWebSite = true;
 
 ### Template:Event
 ```
-== Event ==
-=== {{{name}}}
+<event 
+name="{{{name}}}" 
+startDate="{{{startDate}}}" 
+endDate="{{{endDate}}}"
+description="{{{description}}}"
+image="{{{image}}}"
+attendancemode="{{{attendancemode}}}" 
+eventstatus="{{{eventstatus}}}"
+virtualvendorurl="{{{virtualvendorurl}}}"
+place="{{{place}}}"
+streetaddress="{{{streetAddress}}}" 
+postalCode="{{{postalCode}}}" 
+locality="{{{locality}}}" 
+region="{{{region}}}" 
+country="{{{country}}}" 
+offer="{{{offer}}}" 
+offerURL="{{{offerURL}}}" 
+offerPrice="{{{offerPrice}}}" 
+offerCurrency="{{{offerCurrency}}}" 
+offerAvailability="{{{offerAvailability}}}" 
+validFrom="{{{validFrom}}}"
+performer="{{{performer}}}"
+performer_url="{{{performer_url}}}" 
+performer_sameAs="{{{performer_sameas}}}"
+contributor="{{{contributor}}}" 
+contributor_url="{{{contributor_url}}}" 
+contributor_sameas= "{{{contributor_sameas}}}" 
+contributor_name="{{{contributor_name}}}" 
+contributor_award="{{{contributor_award}}}" 
+organizer="{{{organizer}}}"
+organizer_url="{{{organizer_url}}}"
+/>
 
-{{{description}}}
-
-
-Date: {{{startDate}}}
-
-Place: {{{place}}}
-
-Address: {{{streetAddress}}}
-
-Performer: {{{performer}}}
-
-
-<event name="{{{name}}}" startDate="{{{startDate}}}" endDate="{{{endDate}}}" place="{{{place}}}" description="{{{description}}}" postalCode="{{{postalCode}}}" locality="{{{locality}}}" region="{{{region}}}" country="{{{country}}}" performer="{{{performer}}}" streetaddress="{{{streetAddress}}}" offer="{{{offer}}}" offerURL="{{{offerURL}}}" offerPrice="{{{offerPrice}}}" offerCurrency="{{{offerCurrency}}}" offerAvailability="{{{offerAvailability}}}" validFrom="{{{validFrom}}}" image="{{{image}}} />
 ```
 
 Please note, you're free to update this template in order to setup events publishing in your own flavour
@@ -62,19 +79,38 @@ Please note, you're free to update this template in order to setup events publis
 |name=Track day
 |startDate=2018-06-01T10:00+03:00
 |endDate=2018-06-01T20:00+03:00
-|place=Moscow Raceway
 |description=First track day in June
+|image=https://example.com/trackday.jpg
+|attendancemode=    <!--MixedEventAttendanceMode OfflineEventAttendanceMode OnlineEventAttendanceMode-->
+|eventstatus=       <!--EventCancelled EventMovedOnline EventPostponed EventRescheduled EventScheduled-->
+|virtualvendorurl=  https://example.com/ticketVendorOnlineshow
+
+|place=Moscow Raceway
+|streetAddress=95th km of Novorizhskoe highway (М9)
 |postalCode=000000
 |locality=Moscow district
 |region=District of Volokolamsk
-|streetAddress=95th km of Novorizhskoe highway (М9)
 |country=RU
-|offerAvailability=InStock
-|performer=Some awesome person
+
+|offer =  {{#var: event_name |none}}
 |offerPrice=5
-|offerCurrency=USD
+|offerCurrency= USD
+|offerAvailability=       <!-- Discontinued InStock InStoreOnly LimitedAvailability OnlineOnly OutOfStock PreOrder PreSale SoldOut -->
 |offerURL=http://example.com/test-event
-|image=http://example.com/logo.png
 |validFrom=2018-06-01T10:00+03:00
+
+|performer=awesome performer
+|performer_url=https://example.com/awesomePerformerHomepage/
+|performer_sameas=https://example.com/awesomePerformerHomepage/Wiki
+
+|contributor=another performer
+|contributor_url= https://example.com/anotherPerformerHomepage/
+|contributor_sameas=https://example.com/anotherPerformerHomepage/Wiki
+|contributor_award=https://example.com/anotherPerformerHomepage/Award
+
+|organizer= organizer name
+|organizer_url=https://example.com/organizersPage
 }}
+
+
 ```
